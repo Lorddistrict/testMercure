@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  php_1809:
+    image: 'chialab/php-dev:7.3-apache'
+    volumes:
+      - '.:/var/www/html'
+      - './docker/web/000-default.conf:/etc/apache2/sites-available/000-default.conf'
+    depends_on:
+      - database_1809
+  database_1809:
+    image: 'mariadb'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  adminer_1809:
+    image: 'adminer'
+    environment:
+      - ADMINER_DEFAULT_SERVER=database
+      - ADMINER_DESIGN=brade

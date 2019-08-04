@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  php_1809:
+    ports:
+      - ':80'
+  adminer_1809:
+    ports:
+      - ':8080'
+  database_1809:
+    ports:
+      - ':3306'
